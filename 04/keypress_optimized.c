@@ -5,8 +5,8 @@
 #define SDL_MAIN_USE_CALLBACKS
 #include <SDL3/SDL_main.h>
 
-#define SDL_WINDOW_WIDTH 640
-#define SDL_WINDOW_HEIGHT 480
+#define SDL_WINDOW_WIDTH 1040
+#define SDL_WINDOW_HEIGHT 880
 
 enum KeyPressSurface {
   KEY_PRESS_SURFACE_DEFAULT,
