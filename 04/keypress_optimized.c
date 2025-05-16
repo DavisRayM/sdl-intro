@@ -127,7 +127,8 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]) {
 SDL_AppResult SDL_AppIterate(void *appstate) {
   AppState *as = (AppState *)appstate;
 
-  if (!SDL_BlitSurface(as->currentSurface, NULL, as->windowSurface, NULL)) {
+  if (!SDL_BlitSurfaceScaled(as->currentSurface, NULL, as->windowSurface, NULL,
+                             SDL_SCALEMODE_LINEAR)) {
     SDL_LogError(SDL_LOG_CATEGORY_VIDEO,
                  "Couldn't blit current surface onto window surface: %s",
                  SDL_GetError());
