@@ -87,7 +87,6 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]) {
                  "Couldn't initialize application state: %s", SDL_GetError());
     return SDL_APP_FAILURE;
   }
-  *appstate = as;
 
   as->window =
       SDL_CreateWindow("Keypress", SDL_WINDOW_WIDTH, SDL_WINDOW_HEIGHT, 0);
@@ -114,6 +113,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]) {
   }
 
   as->currentSurface = as->keyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT];
+  *appstate = as;
 
   return SDL_APP_CONTINUE;
 }

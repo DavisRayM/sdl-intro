@@ -30,7 +30,6 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]) {
                  "Couldn't initialize application state");
     return SDL_APP_FAILURE;
   }
-  *appstate = as;
 
   as->window = SDL_CreateWindow("Sample Program", SDL_WINDOW_WIDTH,
                                 SDL_WINDOW_HEIGHT, 0);
@@ -59,6 +58,8 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]) {
                  SDL_GetError());
     return SDL_APP_FAILURE;
   }
+
+  *appstate = as;
 
   return SDL_APP_CONTINUE;
 }

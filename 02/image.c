@@ -43,7 +43,6 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]) {
                  "Couldn't initialize application state");
     return SDL_APP_FAILURE;
   }
-  *appstate = as;
 
   as->window = SDL_CreateWindow("SDL Image On Screen", SDL_WINDOW_WIDTH,
                                 SDL_WINDOW_HEIGHT, 0);
@@ -57,6 +56,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]) {
   if (!load_image(as)) {
     return SDL_APP_FAILURE;
   }
+  *appstate = as;
 
   SDL_BlitSurface(as->image, NULL, as->surface, NULL);
   SDL_UpdateWindowSurface(as->window);
